@@ -1,0 +1,14 @@
+extends layout
+
+block customlibs
+  script(src='/javascripts/survey.js')
+
+block content
+  .body-container
+    .container.main-content
+      h1(class="page-title") Dynamic Poll 
+      .pollURL(class="no-show")= pollURL
+      .poll-container
+        .navigation-buttons
+          button(class="poll-previous-btn poll-btn-hidden") Previous
+          button(class="poll-next-btn") Next

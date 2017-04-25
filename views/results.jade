@@ -1,0 +1,13 @@
+extends layout
+
+block customlibs
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.min.js')
+  script(src='/javascripts/results.js')
+
+block content
+  .body-container
+    .container.main-content
+      h1(class="page-title") Dynamic Poll 
+      .pollURL(class="no-show")= pollURL
+      .results-container
+        .donut-chart-graph.container

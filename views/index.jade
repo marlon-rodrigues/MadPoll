@@ -1,0 +1,39 @@
+extends layout
+
+block customlibs
+  script(src='/javascripts/admin.js')
+  script(src='/libs/qrcodejs/qrcode.min.js')
+
+block content
+  .body-container
+    .container.main-content
+      h1(class="page-title") Dynamic Poll
+
+      .pollURL(class="no-show")= pollURL
+
+      h3(class="page-subtitle")= pageHeader
+
+      .questions-container
+        .question-row
+          i.activate-button.fa.fa-eye(title="Activate Question")
+          i.activate-graph-button.fa.fa-pie-chart(title="Show on Results")
+          .draggable-question-icon.fa.fa-arrows
+          .question-item-container
+            .question-item-input
+              input(type="text" class="question-input-field" placeholder="Enter Question")
+            .question-item-btn
+              button(type="button") Options
+          .answers-item-container
+            .answers-close-section
+              button(class="fa fa-times-circle-o close-options")
+            .draggable-option-container
+              i.fa.fa-arrows
+              input(type="text" class="answer-input-field" placeholder="Enter Answer")
+
+      .navigation-buttons
+        button(type="button" class="save-button") Save
+
+      .poll-info-container
+        .poll-admin-info.poll-info-item.col-xs-12.col-md-4
+        .poll-survey-info.poll-info-item.col-xs-12.col-md-4
+        .poll-results-info.poll-info-item.col-xs-12.col-md-4  
